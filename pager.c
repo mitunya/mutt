@@ -2117,7 +2117,7 @@ mutt_pager (const char *banner, const char *fname, int flags, pager_t *extra)
   if (IsHeader (extra) && !extra->hdr->read)
   {
     Context->msgnotreadyet = extra->hdr->msgno;
-    mutt_set_flag (Context, extra->hdr, MUTT_READ, 1);
+//    mutt_set_flag (Context, extra->hdr, MUTT_READ, 1);
   }
 
   rd.lineInfo = safe_malloc (sizeof (struct line_t) * (rd.maxLine = LINES));
@@ -3017,8 +3017,8 @@ search_next:
 
 	if (extra->hdr->read || extra->hdr->old)
 	  mutt_set_flag (Context, extra->hdr, MUTT_NEW, 1);
-	else if (!first)
-	  mutt_set_flag (Context, extra->hdr, MUTT_READ, 1);
+//	else if (!first)
+//	  mutt_set_flag (Context, extra->hdr, MUTT_READ, 1);
 	first = 0;
         Context->msgnotreadyet = -1;
 	pager_menu->redraw |= REDRAW_STATUS | REDRAW_INDEX;
